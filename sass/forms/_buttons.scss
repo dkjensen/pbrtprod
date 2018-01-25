@@ -1,0 +1,75 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.btn {
+	color: $color__background-button;
+	font-size: 14px;
+	font-size: .8rem;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	line-height: $size__button-height - 2;
+	white-space: nowrap;
+	border: 0;
+	border: 2px solid $color__background-button;
+	background: transparent;
+	padding: $size__button-padding;
+	height: $size__button-height;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: $size__button-radius;
+
+	&.secondary {
+		color: $color__background-button-secondary;
+		border-color: $color__background-button-secondary;
+	}
+
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		color: $color__background-button-hover;
+		text-decoration: none;
+		background: transparent;
+		border-color: $color__background-button-hover;
+		outline: none;
+	}
+
+	&.loading {
+		text-indent: -99em;
+
+		&:before {
+			content: '';
+			box-sizing: border-box;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			margin-top: -10px;
+			margin-left: -10px;
+			border-radius: 50%;
+			border: 2px solid transparent;
+			border-top-color: $color__button;
+			border-bottom-color: $color__button;
+			animation: spinner .75s linear infinite;
+		}
+	}
+
+	&.added:before {
+		content: '\2713';
+		color: $color__button;
+		font-weight: 700;
+		margin: 0 10px 0 0;
+	}
+}
+
+@keyframes spinner {
+	to { transform: rotate(360deg); }
+}

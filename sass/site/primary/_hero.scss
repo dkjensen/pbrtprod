@@ -1,0 +1,14 @@
+.page-hero {
+    color: #ffffff;
+    background: $color__secondary;
+
+    .section-shape {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        svg {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+/**
+ * Products
+ */
+ul.products {
+	@include clearfix;
+	margin: 0;
+	padding: 0;
+
+	li.product {
+		list-style: none;
+		position: relative;
+		margin-bottom: 2em;
+
+		.woocommerce-loop-product__title {
+			font-size: 1rem;
+		}
+
+		img {
+			display: block;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.button {
+			display: block;
+		}
+
+		.onsale {
+			color: $color__button;
+			font-family: $font__alt;
+			font-size: .7em;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			position: absolute;
+			top: 1em;
+			left: -5px;
+			background: $color__background-button;
+			padding: 2px 5px;
+		}
+
+		.onsale:after {
+			content: '';
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 5px 5px 0;
+			border-color: transparent rgba(0, 0, 0, 0.23) transparent transparent;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 48em) {
+	ul.products {
+		li.product {
+			@include column-width(3);
+			float: left;
+			margin-right: $columns__margin;
+
+			&.first {
+				clear: both;
+			}
+
+			&.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.columns-1 {
+		ul.products {
+			li.product {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+
+	@for $i from 2 through 6 {
+		.columns-#{$i} {
+			ul.products {
+				li.product {
+					@include column-width( $i );
+				}
+			}
+		}
+	}
+}

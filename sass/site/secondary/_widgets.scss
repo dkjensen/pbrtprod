@@ -1,0 +1,32 @@
+.widget-area {
+	
+		.widget {
+			margin: 0 0 1.5em;
+	
+			/* Make sure select elements fit in widgets. */
+			select {
+				max-width: 100%;
+			}
+	
+			&.widget_search {
+				.search-form {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+	
+					& > * {
+						flex: 1;
+					}
+	
+					.search-field {
+						width: 95%;
+						width: calc( 100% - .5em );
+					}
+	
+					.search-submit {
+						flex: 0 0 auto;
+					}
+				}
+			}
+		}
+	}

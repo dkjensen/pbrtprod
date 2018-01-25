@@ -1,0 +1,18 @@
+.widget_search {
+
+    .search-form {
+        position: relative;
+
+        label {
+            &:after {
+                right: 8px;
+                right: .5rem;
+            }
+        }
+
+        .search-field {
+            border-radius: $size__button-radius;
+            padding: 0 1.5em;
+        }
+    }
+}
